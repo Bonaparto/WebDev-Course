@@ -1,0 +1,106 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    border: none;
+    list-style: none;
+}
+
+.wrapper-inner {
+    padding: 0 5vw;
+}
+
+.main {
+    &__nav {
+        display: flex;
+        align-items: center; 
+        justify-content: space-between;
+        margin: 0.5vw 0 1vw 0;
+        & a:active, & a {
+            color: #262626;
+        }
+    }
+    &__nav-list {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    &__nav-item {
+        margin: 0 1vw;
+    }
+    &__dropdown-find-login {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-evenly;
+        width: 30vw;
+    }   
+    &__find {
+        & > img {
+            transform: rotate(90deg);
+        }
+    }
+    &__find, &__login {
+        display: flex;
+        align-items: center;
+    }
+    &__find:hover, &__login:hover {
+        cursor: pointer;
+    }
+    &__hero-image-section {
+        background-image: url('images/background.png');
+        background-size: cover;
+        padding: 10vw 5vw;
+        color: white;
+        & > * {
+            margin: 1vw 0;
+        }
+        & > h1 {
+            width: 25vw;
+            font-size: 2vw;
+        }
+        & > h3 {
+            font-weight: normal;
+            width: 35vw;
+        }
+        & > button {
+            width: 14vw;
+            padding: 0.7vw 1vw;
+            font-weight: bold;
+            font-size: 0.8vw;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    &__cards-section {
+        margin: 3vw 0;
+    }
+    &__cards-list {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__cards-item {
+        width: 20vw;
+        & > img {
+            width: 20vw;
+        }
+        & > h2 {
+            margin-top: 2vw;
+            font-weight: bold;
+            font-size: 1.5vw;
+            color: #000
+        }
+        & > p {
+            margin-top: 0.5vw;
+        }
+        & > a {
+            display: block;
+            margin-top: 1vw;
+            color: #0067b8;
+            font-weight: bold;
+            &:hover{
+                color:  #0067b8;
+            }
+        }
+    }
+}

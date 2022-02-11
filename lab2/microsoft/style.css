@@ -1,1 +1,151 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  border: none;
+  list-style: none;
+}
+
+.wrapper-inner {
+  padding: 0 5vw;
+}
+
+.main__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0.5vw 0 1vw 0;
+}
+
+.main__nav a:active, .main__nav a {
+  color: #262626;
+}
+
+.main__nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__nav-item {
+  margin: 0 1vw;
+}
+
+.main__dropdown-find-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 30vw;
+}
+
+.main__find > img {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.main__find, .main__login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__find:hover, .main__login:hover {
+  cursor: pointer;
+}
+
+.main__hero-image-section {
+  background-image: url("images/background.png");
+  background-size: cover;
+  padding: 10vw 5vw;
+  color: white;
+}
+
+.main__hero-image-section > * {
+  margin: 1vw 0;
+}
+
+.main__hero-image-section > h1 {
+  width: 25vw;
+  font-size: 2vw;
+}
+
+.main__hero-image-section > h3 {
+  font-weight: normal;
+  width: 35vw;
+}
+
+.main__hero-image-section > button {
+  width: 14vw;
+  padding: 0.7vw 1vw;
+  font-weight: bold;
+  font-size: 0.8vw;
+}
+
+.main__hero-image-section > button:hover {
+  cursor: pointer;
+}
+
+.main__cards-section {
+  margin: 3vw 0;
+}
+
+.main__cards-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main__cards-item {
+  width: 20vw;
+}
+
+.main__cards-item > img {
+  width: 20vw;
+}
+
+.main__cards-item > h2 {
+  margin-top: 2vw;
+  font-weight: bold;
+  font-size: 1.5vw;
+  color: #000;
+}
+
+.main__cards-item > p {
+  margin-top: 0.5vw;
+}
+
+.main__cards-item > a {
+  display: block;
+  margin-top: 1vw;
+  color: #0067b8;
+  font-weight: bold;
+}
+
+.main__cards-item > a:hover {
+  color: #0067b8;
+}
+/*# sourceMappingURL=style.css.map */
