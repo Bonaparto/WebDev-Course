@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    border: none;
+    list-style: none;
+}
+
+.wrapper-inner {
+    padding: 0 25vw;
+}
+
+.main {
+    hr {
+        background-color: #dadde1;
+        height: 1px;
+        width: 40%;
+    }
+    &__photo-and-login {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+        padding-top: 5vw;
+    }
+    &__photo {
+        position: relative;
+        & img + img {
+            position: absolute;
+            left: 7.65vw;
+            top: 4.94vw;
+        }
+    }
+    &__right-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        // margin-top: 2vw;
+    }
+    &__login {
+        text-align: center;
+        padding: 1vw 2vw;
+        border: 1px solid rgba(var(--b6a,219,219,219),1);
+        border-radius: 3px;
+        & > h1 {
+            margin-bottom: 2vw;
+        } 
+        & > input {
+            display: block;
+            background-color: rgba(var(--b3f,250,250,250),1);
+            border: 1px solid grey;
+            border-radius: 5px;
+            box-shadow: 0 0 0 2px #e7f3ff;
+            font-size: 0.5vw;
+            margin-bottom: 0.5vw;
+            padding: 0.5vw;
+            width: 15vw;
+        }
+        & > button {
+            background-color: #0095f6;
+            border-radius: 5px;
+            color: white;
+            font-size: 1vw;
+            font-weight: bold;
+            padding: 0.3vw;
+            margin-top: 0.7vw;
+            width: 100%;
+        }
+    }
+    &__or {
+        display: flex;
+        align-items: center;
+        margin-top: 1vw;
+        & > span {
+            margin: 0 1vw;
+            color: #8e8e8e;
+            font-size: 0.7vw;
+            font-weight: bold;
+        }
+    }
+    &__login-facebook {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1vw 0;
+        & img {
+            margin-right: 0.5vw;
+        }
+        & > a, & + a, & > a:active, & + a:active {
+            color: #385185;
+        }
+        & + a {
+            font-size: 0.7vw;
+        }
+    }
+    &__registration {
+        border: 1px solid rgba(var(--b6a,219,219,219),1);
+        border-radius: 3px;
+        text-align: center;
+        padding: 1vw;
+        & a, & a:active {
+            color: #0095f6;
+        }
+    }
+}
+
+.footer {
+    color: #8e8e8e;
+    margin-top: 7vw;
+    &__list {
+        display: flex;
+        justify-content: center;
+        font-size: 0.6vw;
+        margin: 1vw 0;
+    }
+    &__item {
+        margin: 0 0.5vw;
+        & a, & a:active {
+            color: #8e8e8e;
+        }
+    }
+}
