@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+}
+.wrapper-inner {
+    padding: 0 20vw;
+}
+
+.main .wrapper-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f2f5;
+    padding: 7vw 20vw;
+}
+
+hr {
+    background-color: #dadde1;
+    height: 1px;
+    width: 98%;
+}
+
+.main {
+    &__login {
+        width: 25vw;
+    }
+    &__text {
+        margin-top: -4vw;
+        width: 35vw;
+        & > svg {
+            margin-left: -1.1vw;
+            margin-bottom: -1vw;
+        }
+    }
+    &__heading {
+        font-size: 2vw;
+        color: #1c1e21;
+        font-weight: 400;
+    }
+    &__login-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 1vw;
+        & > * {
+            margin: 0.5vw;
+        }
+        & > input {
+            width: 20vw;
+            height: 50px;
+            border: none;
+            border: 2px solid grey; 
+            border-radius: 5px;
+            box-shadow: 0 0 0 2px #e7f3ff;
+            font-size: 1vw;
+            padding: 0 1vw;
+        }
+    }
+    & button {
+        color: white;
+        font-weight: bold;
+        font-size: 1vw;
+        border-radius: 7px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &__login-button {
+        background-color: #1877f2;
+        padding: 1vw 10vw;
+        & + a {
+            color: #1877f2;
+            font-weight: 500;
+            font-size: 0.8vw;
+        }
+    }
+    &__create-button {
+        padding: 1vw 2vw;
+        background-color: #36a420;
+    }
+    &__login-create {
+        margin-top: 2vw;
+        font-size: 1vw;
+        text-align: center;
+        & > a {
+            color: black;
+            font-weight: bold;
+        }
+    }
+}
+
+.footer {
+    font-size: 0.7vw;
+    color: grey;
+    & hr {
+        width: 100%;
+    }
+    &__languages-list, &__links-list {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.5vw 0;
+        & a {
+            color: grey;
+            font-weight: 400;
+        }
+        & #bold {
+            font-weight: bold;
+        }
+    }
+    &__links-list {
+        flex-wrap: wrap;
+        justify-content: initial;
+        & > li {
+            margin-right: 1.5vw;
+        }
+    }
+    
+}
