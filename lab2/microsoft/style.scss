@@ -11,6 +11,7 @@
 }
 
 .main {
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
     &__nav {
         display: flex;
         align-items: center; 
@@ -27,12 +28,20 @@
     }
     &__nav-item {
         margin: 0 1vw;
+        &:hover {
+            & .underline {
+                background-color: black;
+            }
+        }
     }
     &__dropdown-find-login {
         display: flex;
         align-items: baseline;
         justify-content: space-evenly;
         width: 30vw;
+        & img {
+            margin-left: 1vw;
+        }
     }   
     &__find {
         & > img {
@@ -45,6 +54,11 @@
     }
     &__find:hover, &__login:hover {
         cursor: pointer;
+    }
+    &__products:hover {
+        & .underline {
+            background-color: black;
+        }
     }
     &__hero-image-section {
         background-image: url('images/background.png');
@@ -67,8 +81,15 @@
             padding: 0.7vw 1vw;
             font-weight: bold;
             font-size: 0.8vw;
+            & .underline {
+                margin-top: 0;
+            }
             &:hover {
                 cursor: pointer;
+                background-color: darken(white, 20%);
+                & .underline {
+                    background-color: black;
+                }
             }
         }
     }
@@ -81,6 +102,9 @@
     }
     &__cards-item {
         width: 20vw;
+        &:hover {
+            cursor: pointer
+        }
         & > img {
             width: 20vw;
         }
@@ -103,4 +127,14 @@
             }
         }
     }
+}
+
+.underline {
+    display: block;
+    background-color: inherit;
+    border-radius: 3px;
+    margin-top: 3px;
+    height: 3px;
+    width: 100%;
+    transition: 0.3s ease all;
 }

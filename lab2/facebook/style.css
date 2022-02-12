@@ -86,6 +86,11 @@ hr {
   padding: 0 1vw;
 }
 
+.main__login-form > input:focus {
+  outline: none;
+  border-color: dodgerblue !important;
+}
+
 .main button {
   color: white;
   font-weight: bold;

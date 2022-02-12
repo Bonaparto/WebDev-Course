@@ -10,6 +10,10 @@
   padding: 0 5vw;
 }
 
+.main {
+  font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 .main__nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,6 +47,10 @@
   margin: 0 1vw;
 }
 
+.main__nav-item:hover .underline {
+  background-color: black;
+}
+
 .main__dropdown-find-login {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,6 +62,10 @@
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   width: 30vw;
+}
+
+.main__dropdown-find-login img {
+  margin-left: 1vw;
 }
 
 .main__find > img {
@@ -72,6 +84,10 @@
 
 .main__find:hover, .main__login:hover {
   cursor: pointer;
+}
+
+.main__products:hover .underline {
+  background-color: black;
 }
 
 .main__hero-image-section {
@@ -102,8 +118,17 @@
   font-size: 0.8vw;
 }
 
+.main__hero-image-section > button .underline {
+  margin-top: 0;
+}
+
 .main__hero-image-section > button:hover {
   cursor: pointer;
+  background-color: #cccccc;
+}
+
+.main__hero-image-section > button:hover .underline {
+  background-color: black;
 }
 
 .main__cards-section {
@@ -121,6 +146,10 @@
 
 .main__cards-item {
   width: 20vw;
+}
+
+.main__cards-item:hover {
+  cursor: pointer;
 }
 
 .main__cards-item > img {
@@ -147,5 +176,16 @@
 
 .main__cards-item > a:hover {
   color: #0067b8;
+}
+
+.underline {
+  display: block;
+  background-color: inherit;
+  border-radius: 3px;
+  margin-top: 3px;
+  height: 3px;
+  width: 100%;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
 }
 /*# sourceMappingURL=style.css.map */
