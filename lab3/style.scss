@@ -1,0 +1,73 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.header {
+    background-color: #955251;
+    padding: 4vw;
+    font-size: 50px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4vw;
+    width: 40vw;
+    margin: 0 auto;
+    & h1 {
+        align-self: flex-start;
+    }
+    & .input-container > .input {
+        padding: 5px 0 5px 1vw;
+        margin-top: 1vw;
+        margin-right: 4vw;
+        width: 30vw;
+        height: 30px;
+        font-size: 15px;
+    }
+    & button {
+        background-color: #34568B;
+        border: none;
+        padding: 15px 25px;
+        border-radius: 5px;
+        font-size: 15px;
+        color: white;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    & .todo-list {
+        width: 100%;
+        margin-top: 50px;   
+    }
+    & .todo-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid gray;
+        padding: 20px 25px;
+        & .check {
+            height: 25px;
+            width: 25px;
+            padding: 30px;
+            margin-right: 50px;
+        }
+        & span {
+            font-size: 25px;
+        }
+        & img {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        & label {
+            width: 85%;
+        }
+    }
+}
