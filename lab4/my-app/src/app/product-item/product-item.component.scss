@@ -1,0 +1,46 @@
+.item {
+    &__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        height: 600px;
+        padding: 10px;
+        border: 1px solid #f5f5f5;;
+    }
+    &__image{ 
+        width: 90%;
+        height: 250px;
+        margin-bottom: 30px;
+    }
+    &__name {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    &__description {
+        font-size: 17px;
+        font-weight: 400;
+    }
+    &__rating {
+        font-size: 15px;
+        font-weight: 700;
+    }
+    &__button-container {
+        background-color: green;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 10px;
+    }
+    &__button {
+        color: white;
+    }
+    &__rating-and-share {
+        position: absolute;
+        bottom: 10px;
+        width: calc(100% - 20px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
