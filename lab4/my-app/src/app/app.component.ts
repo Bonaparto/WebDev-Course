@@ -24,7 +24,7 @@ export class AppComponent {
         description: 'Products with electrical plugs are designed for use in the US. Outlets and voltage differ internationally and this product may require an adapter or converter for use in your destination. Please check compatibility before purchasing.',
         rating: '3.9',
         category: 'components',
-        link: '',
+        link: 'https://www.amazon.com/Goldshell-KD-Box-Kadena-Miner-1-6TH/dp/B09K6653XX/ref=sr_1_1_sspa?qid=1647183854&rnid=16225007011&s=computers-intl-ship&sr=1-1-spons&psc=1&smid=A242WF346A877W&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExNzlLOVUwQTZYNFRHJmVuY3J5cHRlZElkPUExMDEwNzczMkhEVkJPSzg4NllGRCZlbmNyeXB0ZWRBZElkPUEwMzQ4MDUzVklXREg4N1lST0NWJndpZGdldE5hbWU9c3BfYXRmX2Jyb3dzZSZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=',
         shareLink: 'https://twitter.com/intent/tweet?original_referer=https%253A%252F%252Fwww.amazon.com%252Fgp%252Fproduct%252FB09K6653XX%252Fref%253Dcm_sw_r_tw_dp_V1CJG9B9DY1GXQCVB7GA%253Fie%253DUTF8%2526psc%253D1&text=Goldshell%20KD-Box%20Kadena%20Miner%201.6TH%2Fs%20205W%20Goldshell&related=amazondeals%2Camazonmp3&url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB09K6653XX%2Fref%3Dcm_sw_r_tw_dp_V1CJG9B9DY1GXQCVB7GA%3F_encoding%3DUTF8%26psc%3D1&via=amazon'
       },
       {
@@ -33,7 +33,7 @@ export class AppComponent {
         description: 'INNOVATIVE V-NAND TECHNOLOGY: Powered by Samsung V-NAND Technology, the 970 EVO Plus SSD’s NVMe interface (PCIe Gen 3.0 x4 NVMe 1.3) offers enhanced bandwidth, low latency, and power efficiency ideal for tech enthusiasts, high end gamers, and 4K & 3D content designers',
         rating: '4.9',
         category: 'components',
-        link: '',
+        link: 'https://www.amazon.com/Samsung-970-EVO-Plus-MZ-V7S2T0B/dp/B07MFZXR1B/ref=sr_1_4?qid=1647183854&rnid=16225007011&s=computers-intl-ship&sr=1-4',
         shareLink: 'https://twitter.com/intent/tweet?original_referer=https%253A%252F%252Fwww.amazon.com%252Fgp%252Fproduct%252FB07MFZXR1B%252Fref%253Dcm_sw_r_tw_dp_F6P2J0PCVRQAWZXSE5ZN&text=SAMSUNG%20970%20EVO%20Plus%20SSD%202TB%20-%20M.2%20NVMe%20Interface%20Internal%20Solid%20State%20Drive%20...&related=amazondeals%2Camazonmp3&url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB07MFZXR1B%2Fref%3Dcm_sw_r_tw_dp_F6P2J0PCVRQAWZXSE5ZN&via=amazon'
       },
       {
@@ -42,7 +42,7 @@ export class AppComponent {
         description: 'Easily store and access 2TB to content on the go with the Seagate Portable Drive, a USB external hard drive',
         rating: '4.7',
         category: 'components',
-        link: '',
+        link: 'https://www.amazon.com/Seagate-Portable-External-Hard-Drive/dp/B07CRG94G3/ref=sr_1_3?qid=1647183854&rnid=16225007011&s=computers-intl-ship&sr=1-3',
         shareLink: 'https://twitter.com/intent/tweet?original_referer=https%253A%252F%252Fwww.amazon.com%252Fgp%252Fproduct%252FB07CRG94G3%252Fref%253Dcm_sw_r_tw_dp_MJ5S8G0H5RZR7SEGPE5W&text=Seagate%20Portable%202TB%20External%20Hard%20Drive%20Portable%20HDD%20%E2%80%93%20USB%203.0%20for%20PC%2C%20Mac%2C%20...&related=amazondeals%2Camazonmp3&url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB07CRG94G3%2Fref%3Dcm_sw_r_tw_dp_MJ5S8G0H5RZR7SEGPE5W&via=amazon'
       },
       {
@@ -51,7 +51,7 @@ export class AppComponent {
         description: '4 in 4 out USB Switch Box: 4 port USB sharing switch allows 4 buttons swapping between 4 computers to share 4 usb 3.0 peripherals devices without constantly swapping cables or setting up complicated network sharing software.',
         rating: '5',
         category: 'components',
-        link: '',
+        link: 'https://www.amazon.com/Selector-Computer-Switches-Keyboard-Individual/dp/B09NKMBZN8/ref=sr_1_2_sspa?qid=1647183854&rnid=16225007011&s=computers-intl-ship&sr=1-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExNzlLOVUwQTZYNFRHJmVuY3J5cHRlZElkPUExMDEwNzczMkhEVkJPSzg4NllGRCZlbmNyeXB0ZWRBZElkPUEwMTUzOTQwWDNGQ0NOWFlVR1JQJndpZGdldE5hbWU9c3BfYXRmX2Jyb3dzZSZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=',
         shareLink: 'https://twitter.com/intent/tweet?original_referer=https%253A%252F%252Fwww.amazon.com%252Fgp%252Fproduct%252FB09NKMBZN8%252Fref%253Dcm_sw_r_tw_dp_7EW741DV3PYJQMM3VGXX%253Fie%253DUTF8%2526psc%253D1&text=KVM%20Switch%20Selector%2C%204%20Computer%20Sharing%204%20USB%20Devices%20USB%203.0%20Switches%20Box%20fo...&related=amazondeals%2Camazonmp3&url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB09NKMBZN8%2Fref%3Dcm_sw_r_tw_dp_7EW741DV3PYJQMM3VGXX%3F_encoding%3DUTF8%26psc%3D1&via=amazon'
       },
       {
@@ -60,7 +60,7 @@ export class AppComponent {
         description: 'USB 3.0 and USB 2.0 Compatibility',
         rating: '4.7',
         category: 'components',
-        link: '',
+        link: 'https://www.amazon.com/Elements-Portable-External-Drive-WDBU6Y0050BBK-WESN/dp/B07X41PWTY/ref=sr_1_5?qid=1647183854&rnid=16225007011&s=computers-intl-ship&sr=1-5',
         shareLink: 'https://twitter.com/intent/tweet?original_referer=https%253A%252F%252Fwww.amazon.com%252Fgp%252Fproduct%252FB07X41PWTY%252Fref%253Dcm_sw_r_tw_dp_3Z6XXN91WMPNBR2K16NP&text=WD%205TB%20Elements%20Portable%20External%20Hard%20Drive%20HDD%2C%20USB%203.0%2C%20Compatible%20with%20PC...&related=amazondeals%2Camazonmp3&url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB07X41PWTY%2Fref%3Dcm_sw_r_tw_dp_3Z6XXN91WMPNBR2K16NP&via=amazon'
       },
       {
