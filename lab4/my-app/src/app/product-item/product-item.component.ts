@@ -14,6 +14,7 @@ export class ProductItemComponent implements OnInit {
         description: '',
         rating: '',
         category: '',
+        shareLink: '',
         link: ''
     }
 
