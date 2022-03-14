@@ -1,4 +1,7 @@
-<li class="item__container">
+<li 
+    class="item__container"
+    *ngIf="item.isShown"
+>
     <a 
         [href]="item.link"
         target="_blank"
@@ -11,8 +14,23 @@
     </a>
     <h1 class="item__name"> {{ item.name }} </h1>
     <p class="item__description">{{ item.description }}</p>
-    <div class="item__rating-and-share">
-        <span class="item__rating">{{ item.rating }} out of 5</span>
+    <div class="item__additional-info">
+        <div class="item__rating-and-like">
+            <span class="item__rating">{{ item.rating }} out of 5</span>
+            <img 
+                class="item__like-button"
+                src="assets/images/common/like.svg" 
+                alt="Кнопка лайк"
+                (click)="increaseLikesAmount()"
+            >
+            <span class="item__likes">{{ item.likes }} liked it</span>
+        </div>
+        <img 
+            class="item__remove-button"
+            src="assets/images/common/remove.png" 
+            alt="Кнопка удаления"
+            (click)="remove()"
+        >
         <div class="item__button-container">
             <a 
                 class="item__button"

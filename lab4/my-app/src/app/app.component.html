@@ -1,7 +1,9 @@
-<ul class="item-list">
-    <app-product-item
-      *ngFor="let item of items"
-      [item]="item"
+<ul class="category__list">
+    <app-product-list
+      *ngFor="let category of categories"
+      [category]="category"
+      [items]="getItems(category.name)"
+      (newCategoryEvent)="makeActive($event)"
     >
-    </app-product-item>
+    </app-product-list>
 </ul>

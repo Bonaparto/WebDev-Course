@@ -36,12 +36,27 @@
     &__button {
         color: white;
     }
-    &__rating-and-share {
+    &__additional-info {
         position: absolute;
         bottom: 10px;
         width: calc(100% - 20px);
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    &__like-button {
+        width: 24px;
+        margin-left: 15px;
+        margin-bottom: -4px;
+        cursor: pointer;
+    }
+    &__likes {
+        font-size: 16px;
+        font-weight: 500;
+        margin-left: 5px;
+    }
+    &__remove-button {
+        width: 32px;
+        cursor: pointer;
     }
 }

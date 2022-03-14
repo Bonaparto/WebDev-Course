@@ -15,8 +15,20 @@ export class ProductItemComponent implements OnInit {
         rating: '',
         category: '',
         shareLink: '',
-        link: ''
+        link: '',
+        likes: 0,
+        isShown: true
     }
 
-    ngOnInit(): void {}
+    increaseLikesAmount() {
+        this.item.likes++;
+    }
+
+    remove() {
+        this.item.isShown = false;
+    }
+
+    ngOnInit(): void {
+        console.log(this.item.name);
+    }
 } 

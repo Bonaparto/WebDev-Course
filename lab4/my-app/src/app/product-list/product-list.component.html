@@ -1,0 +1,17 @@
+<li 
+    class="category__item" 
+    (click)="makeActive(category.name)"
+>
+    <img class="category__image" [src]="category.img" alt="Категория">
+    <h1 class="category__name">{{ category.name }}</h1>
+    <ul 
+        class="item__list"
+        *ngIf="category.isChoosen"
+    >
+        <app-product-item
+            *ngFor="let item of items"
+            [item]="item"
+        >
+        </app-product-item>
+    </ul>
+</li>
