@@ -1,0 +1,32 @@
+<div class="album">
+    <h3>
+        {{ album.title }}
+    </h3>
+    <div class="input">
+        <input 
+            type="text" 
+            id="input"
+            [value]="newTitle"
+            #box
+        >
+        <button 
+            type="button"
+            (click)="changeTitle(box.value)"
+        >
+            Save
+        </button>
+    </div>
+    <button 
+        class="return"
+        [routerLink]="['/albums']"
+    >
+        Return back
+    </button>
+    <button 
+        class="photos"
+        [routerLink]="['photos']"
+        [state]="{album: album}"
+    >
+        Photos
+    </button>
+</div>

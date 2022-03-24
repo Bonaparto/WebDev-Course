@@ -1,0 +1,7 @@
+.albums {
+    &-item {
+        &__remove, &__title {
+            cursor: pointer;
+        }
+    }
+}
