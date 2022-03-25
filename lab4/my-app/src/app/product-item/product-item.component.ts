@@ -29,6 +29,5 @@ export class ProductItemComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(this.item.name);
     }
 } 

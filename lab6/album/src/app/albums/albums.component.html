@@ -5,8 +5,8 @@
     >
         <h3
             class="albums-item__title"
+            (click)="setAlbum(album.id)"
             [routerLink]="['/albums', album.id]"
-            [state]="{album: album}"
         >
             {{ album.title }} 
         </h3>

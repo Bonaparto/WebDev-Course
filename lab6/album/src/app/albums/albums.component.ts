@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import albums from '../../assets/files/albums.json';
+import { HttpService } from '../album.service';
 
 export interface Album {
   userId: number,
@@ -11,17 +10,20 @@ export interface Album {
 @Component({
   selector: 'app-albums',
   templateUrl: './albums.component.html',
-  styleUrls: ['./albums.component.scss']
+  styleUrls: ['./albums.component.scss'],
+  providers: [HttpService]
 })
 export class AlbumsComponent implements OnInit {
   
-  constructor() { }
+  constructor(private httpService: HttpService) { }
   
   ngOnInit(): void {
+    this.httpService.getAlbums().subscribe((data: Album[]) => this.albumsList=data);   
+    console.log(this.albumsList);
+    
   }
-  
-  selectedAlbum: number = 0;
-  albumsList: Album[] = albums; 
+
+  albumsList: Album[] = []; 
 
   removeAlbum(album: Object) {
     for(let i = 0; i < this.albumsList.length; ++i) {
@@ -29,5 +31,8 @@ export class AlbumsComponent implements OnInit {
         this.albumsList.splice(i, 1);
       }
     }
+  }
+  setAlbum(val: number) {
+    this.httpService.setAlbum(val);    
   }
 }

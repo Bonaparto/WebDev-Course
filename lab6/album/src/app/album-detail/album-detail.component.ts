@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../album.service';
 
 export interface Album {
   userId: number,
@@ -9,22 +10,24 @@ export interface Album {
 @Component({
   selector: 'app-album-detail',
   templateUrl: './album-detail.component.html',
-  styleUrls: ['./album-detail.component.scss']
+  styleUrls: ['./album-detail.component.scss'],
+  providers: [HttpService]
 })
 
 
 export class AlbumDetailComponent implements OnInit {
   
-  constructor() { 
+  constructor(private httpService: HttpService) { 
   }
 
+  albumsList: Album[] = []; 
+  selectedAlbum: number = 0;
+
   ngOnInit(): void {
-    this.album = window.history.state.album || 
-    {
-      userId: 1,
-      id: 1,
-      title: ''
-    };    
+    this.httpService.getAlbums().subscribe((data: Album[]) => this.albumsList=data);   
+    this.selectedAlbum = this.httpService.getAlbum();   
+    console.log(this.selectedAlbum);
+    
   }
   
   album: Album = {

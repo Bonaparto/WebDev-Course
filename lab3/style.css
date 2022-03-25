@@ -10,7 +10,7 @@
   padding: 4vw;
   font-size: 50px;
   font-weight: bold;
-  width: 100%;
+  width: 92%;
 }
 
 .main {
@@ -89,7 +89,7 @@
   font-size: 25px;
 }
 
-.main .todo-item img:hover {
+.main .todo-item img {
   cursor: pointer;
 }
 

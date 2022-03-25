@@ -4,12 +4,13 @@
     list-style: none;
     text-decoration: none;
 }
+
 .header {
     background-color: #955251;
     padding: 4vw;
     font-size: 50px;
     font-weight: bold;
-    width: 100%;
+    width: 92%;
 }
 
 .main {
@@ -62,9 +63,7 @@
             font-size: 25px;
         }
         & img {
-            &:hover {
-                cursor: pointer;
-            }
+            cursor: pointer;
         }
         & label {
             width: 85%;

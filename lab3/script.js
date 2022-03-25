@@ -28,7 +28,7 @@ function push() {
             else li1.querySelector('span').style.textDecoration = 'none';
         });
         li1.querySelector('img').addEventListener('click', () => {
-            li1.remove();
+            li1.remove(); 
         });
         input.value = '';
     } else alert('You have to write something first!');

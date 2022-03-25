@@ -10,6 +10,9 @@ export class AlbumPhotosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.albumId = window.history.state.album.id;
   }
+
+  albumId: number = 1;
 
 }

@@ -22,12 +22,10 @@ const routes: Routes = [
   {
     path: 'albums/:id',
     component: AlbumDetailComponent,
-    children: [
-      {
-        path: 'photos',
-        component: AlbumPhotosComponent,
-      }
-    ]
+  },
+  {
+    path: 'albums/:id/photos',
+    component: AlbumPhotosComponent
   },
   {
     path: '',
