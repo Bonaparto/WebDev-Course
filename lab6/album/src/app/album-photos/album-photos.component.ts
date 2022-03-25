@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import photos from '../../assets/files/photos.json'
+
+export interface Photo {
+  title: string,
+  URL: string
+}
 
 @Component({
   selector: 'app-album-photos',
@@ -10,6 +16,9 @@ export class AlbumPhotosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.photos = photos;
   }
+
+  photos: Photo[] = [];
 
 }
