@@ -3,7 +3,7 @@ import photos from '../../assets/files/photos.json'
 
 export interface Photo {
   title: string,
-  URL: string
+  url: string
 }
 
 @Component({

@@ -9,6 +9,8 @@
         class="photos-item"
         *ngFor="let photo of photos"
     >
-        <img [src]="photo.URL" alt="">
+    <!-- {{photo.URL}}
+    {{photo.title}} -->
+        <img [src]="photo.url" alt="">
     </li>
 </ul>
