@@ -1,18 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from '@angular/common';
+import { HttpService } from '../album.service';
+import { Photo } from '../interface/photo'
 
 @Component({
   selector: 'app-album-photos',
   templateUrl: './album-photos.component.html',
-  styleUrls: ['./album-photos.component.scss']
+  styleUrls: ['./album-photos.component.scss'],
+  providers: [HttpService]
 })
 export class AlbumPhotosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService, private location: Location) { }
 
   ngOnInit(): void {
-    this.albumId = window.history.state.album.id;
+    this.httpService.getPhotos().
+    subscribe(
+      (response: Photo[]) => this.photos = response,
+      (error: any) => console.log(error)
+    )
   }
 
-  albumId: number = 1;
+  photos: Photo[] = [];
 
+  onClickBack() {
+    this.location.back();
+  }
 }

@@ -1,43 +1,33 @@
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
-import { map } from 'rxjs/operators';
-import {HttpClient} from '@angular/common/http';
-
-export interface Album {
-    userId: number,
-    id: number,
-    title: string
-}
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Album } from './interface/album'
+import { Photo } from './interface/photo'
 
 @Injectable()   
-export class HttpService{
+export class HttpService {
 
     constructor(private http: HttpClient){ }
-    
-    selectedAlbum: number = 0;
         
+    selectedAlbum: number = 1;
+
     getAlbums() : Observable<Album[]> {
-        return this.http.get('assets/files/albums.json').pipe(map((data:any) => {
-            let albumsList = data;
-            return albumsList;
-        }));
+        return this.http.get<Album[]>('https://jsonplaceholder.typicode.com/albums');
     }
 
-    getAlbum() : number {
-        console.log(this.selectedAlbum, 'kke');
+    getSelectedAlbum() : Observable<Album> {
+        return this.http.get<Album>("https://jsonplaceholder.typicode.com/albums/" + this.getSelectedAlbumId() + '/');
+    }
+
+    getSelectedAlbumId() : number {
         return this.selectedAlbum;
-        // const albums = this.getAlbums();
-        // return albums[i-1];
-        // for(let i = 0; i < albums.length; ++i) {
-        //     if(albums[i] === )
-        // }
-
     }
 
-    setAlbum(val: number): void {
-        console.log(val, 'lol');
-        this.selectedAlbum = val;
-        console.log(this.selectedAlbum, 'lol');
+    getPhotos() : Observable<Photo[]> {
+        return this.http.get<Photo[]>("https://jsonplaceholder.typicode.com/albums/" + this.getSelectedAlbumId() + "/photos");
     }
- 
+
+    setSelectedAlbum(album: number) {
+        this.selectedAlbum = album;
+    }
 }

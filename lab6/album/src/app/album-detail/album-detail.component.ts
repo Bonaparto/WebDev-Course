@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../album.service';
-
-export interface Album {
-  userId: number,
-  id: number,
-  title: string
-}
+import { ActivatedRoute } from '@angular/router';
+import { Album } from '../interface/album'
 
 @Component({
   selector: 'app-album-detail',
@@ -17,17 +13,15 @@ export interface Album {
 
 export class AlbumDetailComponent implements OnInit {
   
-  constructor(private httpService: HttpService) { 
+  constructor(private httpService: HttpService, route: ActivatedRoute) { 
   }
 
-  albumsList: Album[] = []; 
-  selectedAlbum: number = 0;
-
   ngOnInit(): void {
-    this.httpService.getAlbums().subscribe((data: Album[]) => this.albumsList=data);   
-    this.selectedAlbum = this.httpService.getAlbum();   
-    console.log(this.selectedAlbum);
-    
+    this.httpService.getSelectedAlbum().
+    subscribe(
+      (response: Album) => this.album = response,
+      (error: any) => console.log(error)
+    );
   }
   
   album: Album = {

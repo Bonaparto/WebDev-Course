@@ -1,14 +1,14 @@
 <button 
     class="return"
-    [routerLink]=""
+    (click)="onClickBack()"
 >
     Return back
 </button>
-<!-- <ul class="photos-list">
+<ul class="photos-list">
     <li 
         class="photos-item"
         *ngFor="let photo of photos"
     >
-        <img [src]="photo.src" alt="">
+        <img [src]="photo.url" alt="">
     </li>
-</ul> -->
+</ul>
