@@ -23,6 +23,7 @@ export class AlbumsComponent implements OnInit {
   }
     
   removeAlbum(album: Object) {
+    this.httpService.delete('url', id);
     for(let i = 0; i < this.albumsList.length; ++i) {
       if(Object.is(this.albumsList[i], album)) {
         this.albumsList.splice(i, 1);
