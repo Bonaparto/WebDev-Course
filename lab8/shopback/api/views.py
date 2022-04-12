@@ -6,7 +6,7 @@ from api.models import Product, Category
 def get_products_list(request):
     products_list = Product.objects.all()
     products_list_json = [product.to_json() for product in products_list]
-    return JsonResponse(products_list_json, safe=False)
+    return JsonResponse(products_list_json)
 
 
 def get_product(request, product_id):
@@ -21,7 +21,7 @@ def get_product(request, product_id):
 def get_categories_list(request):
     categories_list = Category.objects.all()
     categories_list_json = [category.to_json() for category in categories_list]
-    return JsonResponse(categories_list_json, safe=False)
+    return JsonResponse(categories_list_json)
 
 
 def get_category(request, category_id):
@@ -40,4 +40,4 @@ def get_category_products(request, category_id):
     except Product.DoesNotExist as e:
         return JsonResponse({'message': str(e)}, status=400)
 
-    return JsonResponse(products_list_json, safe=False)
+    return JsonResponse(products_list_json)
