@@ -22,7 +22,7 @@ urlpatterns = [
     path('api/companies', get_companies_list),
     path('api/companies/<int:id>', get_company),
     path('api/companies/<int:id>/vacancies', get_company_vacancies),
-    path('api/vacancies', get_vacancies),
+    path('api/vacancies', get_vacancies_list),
     path('api/vacancies/<int:id>', get_vacancy),
     path('api/vacancies/top_ten', get_top10_vacancies)
 ]
