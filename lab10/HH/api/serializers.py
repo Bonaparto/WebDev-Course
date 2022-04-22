@@ -25,3 +25,9 @@ class CompanySerializer(serializers.Serializer):
         instance.address = validated_data.get('address')
         instance.save()
         return instance
+
+
+class VacancySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Vacancy
+        fields = ['id', 'name', 'description', 'salary', 'company']
