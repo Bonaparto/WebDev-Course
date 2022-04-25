@@ -7,8 +7,27 @@
 </div>
 
 <div *ngIf="logged">
-  <h1>Categories</h1>
-  <router-outlet></router-outlet>
-
+  <h1>Navigation</h1>
+  <nav>
+    <ul>
+      <li>
+        <button [routerLink]="['/api/companies']">
+          Companies
+        </button>
+      </li>
+      <li>
+        <button [routerLink]="['/api/vacancies']">
+          Vacancies
+        </button>
+      </li>
+      <li>
+        <button [routerLink]="['/api/vacancies/top_ten']">
+          Top 10 vacancies
+        </button>
+      </li>
+    </ul>
+  </nav>
   <button (click)="logout()">Logout</button>
+  <button (click)="returnBack()">Return Back</button>
+  <router-outlet></router-outlet>
 </div>

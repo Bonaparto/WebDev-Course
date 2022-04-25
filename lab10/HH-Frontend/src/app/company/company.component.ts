@@ -9,18 +9,42 @@ import { CompanyServiceService } from '../company-service.service'
 })
 export class CompanyComponent implements OnInit {
 
+  name: string = ''
+  city: string = ''
+  address: string = ''
+  description: string = ''
+  id: number = 0
+  company: Company = {
+    "name": '',
+    "city": '',
+    "address": '',
+    "description": '',
+    "id": 0,
+  }
+
   companies: Company[] = [];
 
   constructor(private companyService: CompanyServiceService) { }
 
   ngOnInit(): void {
-    this.getCategories();
+    this.getCompanies();
   }
 
-  getCategories() {
+  getCompanies() {
     this.companyService.getCompanies().subscribe( (data) => {
-      console.log(data);  
+      this.companies = data; 
     }); 
+  }
+
+  postCompany() {
+    console.log(this.company);
+    this.companyService.postCompany(this.company).subscribe( (data) => {
+      console.log(data);
+    })
+  }
+
+  selectCompany(company_id: number) {
+    this.companyService.setSelectedCompany(company_id)
   }
 
 }

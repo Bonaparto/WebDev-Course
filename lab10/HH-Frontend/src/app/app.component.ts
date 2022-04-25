@@ -7,7 +7,6 @@ import {CompanyServiceService} from "./company-service.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'servicesGroup2';
 
   logged = false;
 
@@ -16,14 +15,14 @@ export class AppComponent implements OnInit {
 
   constructor(private CompanyServiceService: CompanyServiceService) {}
 
-  ngOnInit(){
+  ngOnInit() {
     let token = localStorage.getItem('token');
     if (token){
       this.logged = true;
     }
   }
 
-  login(){
+  login() {
     this.CompanyServiceService.login(this.username, this.password)
       .subscribe(res => {
         console.log(this.username, this.password);
@@ -36,9 +35,13 @@ export class AppComponent implements OnInit {
       })
   }
 
-  logout(){
+  logout() {
     localStorage.clear();
     this.logged = false;
+  }
+
+  returnBack() {
+    this.CompanyServiceService.returnBack()
   }
 
 }

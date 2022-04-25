@@ -1,14 +1,15 @@
-<h1>Companies</h1>
-
-<ul>
-  <li 
-    *ngFor="let company of companies"
-    (click)="selectCompany(company.id)"  
-    [routerLink]="['/api/companies', company.id]"
-  >
-    <p>id: {{company.id}}, name: {{company.name}}</p>
-  </li>
-</ul> 
+<h1>
+  Name: {{ company.name }}
+</h1>
+<h3>
+  City: {{ company.city }}
+</h3>
+<h3>
+  Address: {{ company.address }}
+</h3>
+<p>
+  Description: {{ company.description}}
+</p>
 
 <form>
   <input 
@@ -41,5 +42,7 @@
     [(ngModel)]="company.id" 
     name="id"
   >
-  <button (click)="postCompany()">Create Company</button>
+  <button (click)="putCompany()">Save Info</button>
 </form>
+
+<button (click)="deleteCompany()">Delete Company</button>

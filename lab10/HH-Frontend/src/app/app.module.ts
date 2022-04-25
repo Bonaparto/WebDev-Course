@@ -7,11 +7,13 @@ import {CompanyComponent} from './company/company.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {AuthInterceptor} from "./auth.interceptor";
+import { CompanyDetailsComponent } from './company-details/company-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CompanyComponent
+    CompanyComponent,
+    CompanyDetailsComponent
   ],
   imports: [
     AppRoutingModule,
