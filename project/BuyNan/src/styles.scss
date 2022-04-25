@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* FONTS */
+@font-face {
+  font-family: "Saira";
+  src: local("Saira"), url(./assets/fonts/Saira_SemiExpanded-SemiBold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url(./assets/fonts/Roboto-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url(./assets/fonts/Roboto-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy"), url(./assets/fonts/Gilroy-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy"), url(./assets/fonts/Gilroy-Semibold.ttf) format("truetype");
+}
+/* FONTS */ 
+
+/* NULLIFYING STYLES */
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* NULLIFYING STYLES */
+
+/* COMMON STYLES  */
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* COMMON STYLES  */
+
+/* COLORS */
+
+$greenInactive: #499F68;
+$greenActive: #37995A;
+$greenHover: #278C4B;
+$greenSelected: #1C7E3F;
+
+/* COLORS */
+
+/* MIXINS */
+
+@mixin text-style($fontWeight, $fontSize, $lineHeight, $color) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  color: $color;
+} 
+
+/* MIXINS */
