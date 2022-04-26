@@ -5,52 +5,74 @@
       <h1 class="nav__company-name">BuyNan</h1>
     </header>
     <ul class="nav__list">
-      <li class="nav__item">
+      <li 
+        class="nav__item" 
+        [class.activeButton]="isButtonActive('Products')"
+        (click)="onNavClick('Products')"
+      >
         <img src="../assets/images/decorative/navbar/icon_groceries.svg" width="24px" height="24px">
         <h2 class="nav__item-name">Products</h2>
       </li>
-      <li class="nav__item">
+      <li 
+        class="nav__item" 
+        [class.activeButton]="isButtonActive('Categories')"
+        (click)="onNavClick('Categories')"
+      >
         <img src="../assets/images/decorative/navbar/icon_clipboard.svg" width="24px" height="24px">
         <h2 class="nav__item-name">Categories</h2>
       </li>
-      <li class="nav__item">
+      <li 
+        class="nav__item" 
+        [class.activeButton]="isButtonActive('Providers')"
+        (click)="onNavClick('Providers')"
+      >
         <img src="../assets/images/decorative/navbar/icon_users.svg" width="24px" height="24px">
         <h2 class="nav__item-name">Providers</h2>
       </li>
-      <li class="nav__item">
+      <li 
+        class="nav__item" 
+        (click)="onNavClick('Logout')"
+      >
         <img src="../assets/images/decorative/navbar/icon_logout.svg" width="24px" height="24px">
-        <h2 class="nav__item-name">Logout</h2>
+        <h2 class="nav__item-name">
+          {{ getTextForLogin() }}
+        </h2>
       </li>
     </ul>
   </nav>
+  <article class="article">
+    <header>
+      <section>
+        <div class="article__login">
+          <img src="../assets/images/decorative/login.svg">
+          <h3 class="article__login-text">Login</h3>
+        </div>
+      </section>
+      <section class="article__search-create">
+        <div class="article__search">
+          <input 
+            type="text" 
+            placeholder="Search" 
+            class="article__search-input"
+            [(ngModel)]="searchInput"
+            (input)="checkInput()"
+          >
+          <button class="article__search-button">
+            <img src="../assets/images/decorative/search.svg">
+          </button>
+        </div>
+        <div class="article__create">
+          <button class="article__create-button">
+            <img src="../assets/images/decorative/icon_add.svg">
+            <h3 class="article__create-text">Create</h3>
+          </button>
+        </div>
+      </section>
+    </header>
 
-  <header>
-    <section>
-      <div class="">
-        <img src="" alt="">
-        <h3>Login</h3>
-      </div>
-    </section>
-    <section>
-      <div class="">
-        <input type="text" placeholder="Search" name="" id="">
-        <button>
-          <img src="" alt="">
-        </button>
-      </div>
-      <div class="">
-        <button>
-          <img src="" alt="">
-          <h3>Create</h3>
-        </button>
-      </div>
-    </section>
-  </header>
-
-  <article>
     <section>
       <!-- <Product>
-         
+          
       </Product> -->
     </section>
   </article>

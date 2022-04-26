@@ -1,12 +1,17 @@
 @import '../styles.scss';
 
+.main {
+  display: flex;
+}
+
 .nav {
   color: white;
   height: 100vh;
-  max-width: 20%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   background-color: $greenInactive;
+  margin-right: 20px;
   &__header, &__item {
     display: flex;
     align-items: center;
@@ -14,22 +19,71 @@
   &__header {
     font-family: "Saira";
     justify-content: center;
-    padding: 20px 0 30px 0;
+    padding: 25px 0 30px 0;
   }
   &__company-name {
     margin-left: 6px;
   }
   &__list {
-    padding-left: 20px;
+    width: 100%;
   }
   &__item {
-    font-family: "Gilroy";
-    padding: 10px 0;
-    margin-left: auto;
-    margin-right: 10px;
-    width: 60%;
+    padding: 10px 0 10px 90px;
+    cursor: pointer;
     &-name {
       margin-left: 15px;
+    }
+    &:hover {
+      background-color: $greenHover;
+    }
+  }
+}
+
+.article {
+  padding: 30px 90px 0 0;
+  width: 80%;
+  &__login {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    &-text {
+      margin-left: 10px;
+      @include text-style($fw-regular, $fs-m, $lh-m, $textHigh);
+    }
+  }
+  &__search-create {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+  }
+  &__search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-grow: 2;
+    margin-right: 20px;
+    &-button {
+      @include button-style(0, 10px, 10px, 0, $greenSelected, 14px, 41px);
+    }
+    &-input {
+      padding: 18px 0 18px 20px;
+      background-color: $inputColor;
+      flex-basis: 100%;
+      border-radius: 10px 0 0 10px;
+      @include text-style($fw-regular, $fs-m, $lh-m, $textMedium);
+    }
+  }
+  &__create {
+    &-button {
+      display: flex;
+      align-items: center;
+      @include button-style(10px, 10px, 10px, 10px, $greenSelected, 16px, 41px);
+    }
+    &-text {
+      margin-left: 15px;
+      @include text-style($fw-regular, $fs-m, $lh-m, white);
     }
   }
 }
