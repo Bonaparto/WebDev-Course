@@ -45,7 +45,7 @@
       <section>
         <div class="article__login">
           <img src="../assets/images/decorative/login.svg">
-          <h3 class="article__login-text">Login</h3>
+          <span class="article__login-text">Login</span>
         </div>
       </section>
       <section class="article__search-create">
@@ -55,7 +55,6 @@
             placeholder="Search" 
             class="article__search-input"
             [(ngModel)]="searchInput"
-            (input)="checkInput()"
           >
           <button class="article__search-button">
             <img src="../assets/images/decorative/search.svg">
@@ -64,16 +63,20 @@
         <div class="article__create">
           <button class="article__create-button">
             <img src="../assets/images/decorative/icon_add.svg">
-            <h3 class="article__create-text">Create</h3>
+            <span class="article__create-text">Create</span>
           </button>
         </div>
       </section>
     </header>
 
-    <section>
-      <!-- <Product>
-          
-      </Product> -->
+    <section class="article__items-section">
+      <ul class="article__items-list">
+        <app-item 
+          *ngFor="let item of items" 
+          [item]="item"
+          (click)="openItemDetails(item)"
+        ></app-item>
+      </ul>
     </section>
   </article>
 </main>

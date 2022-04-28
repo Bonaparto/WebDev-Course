@@ -1,0 +1,22 @@
+<li class="article__item">
+  <img 
+    src='../assets/images/{{item.src}}.png'
+    class="article__item-photo"
+    width="120"
+    height="120"
+  >
+  <h4 class="article__item-name">{{ item.name }}</h4>
+  <span 
+    *ngIf="isProduct()" 
+    class="article__item-price"
+  >
+    Price: <span class="article__item-price-name"> {{ item.price }}</span>
+  </span>
+  <span 
+    *ngIf="isProduct()" 
+    class="article__item-provider"
+  >
+    Provider: <span class="article__item-provider-name">{{ item.provider }}</span>
+  </span>
+  <button class="article__item-button">Watch more</button>
+</li>
