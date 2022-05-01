@@ -1,6 +1,7 @@
-if __name__ == '__main__':
-    a = int(raw_input())
-    b = int(raw_input())
-print(a + b)
-print(a - b)
-print(a * b)
+a = int(input())
+if a > 0:
+    print(1)
+elif a < 0:
+    print(-1)
+else:
+    print(0)

@@ -140,7 +140,7 @@ export class AppComponent implements OnInit {
   }
 
   openItemDetails(item: any) {
-    console.log(item);
+    console.log(item);  
   }
 
   isButtonActive(buttonName: string) {
