@@ -9,6 +9,7 @@
         class="nav__item" 
         [class.activeButton]="isButtonActive('Products')"
         (click)="onNavClick('Products')"
+        [routerLink]="['products']"
       >
         <img src="../assets/images/decorative/navbar/icon_groceries.svg" width="24px" height="24px">
         <h2 class="nav__item-name">Products</h2>
@@ -17,6 +18,7 @@
         class="nav__item" 
         [class.activeButton]="isButtonActive('Categories')"
         (click)="onNavClick('Categories')"
+        [routerLink]="['categories']"
       >
         <img src="../assets/images/decorative/navbar/icon_clipboard.svg" width="24px" height="24px">
         <h2 class="nav__item-name">Categories</h2>
@@ -25,13 +27,14 @@
         class="nav__item" 
         [class.activeButton]="isButtonActive('Providers')"
         (click)="onNavClick('Providers')"
+        [routerLink]="['providers']"
       >
         <img src="../assets/images/decorative/navbar/icon_users.svg" width="24px" height="24px">
         <h2 class="nav__item-name">Providers</h2>
       </li>
       <li 
         class="nav__item" 
-        (click)="onNavClick('Logout')"
+        (click)="onNavClick('Authorization')"
       >
         <img src="../assets/images/decorative/navbar/icon_logout.svg" width="24px" height="24px">
         <h2 class="nav__item-name">
@@ -70,13 +73,7 @@
     </header>
 
     <section class="article__items-section">
-      <ul class="article__items-list">
-        <app-item 
-          *ngFor="let item of items" 
-          [item]="item"
-          (click)="openItemDetails(item)"
-        ></app-item>
-      </ul>
+      <router-outlet></router-outlet>
     </section>
   </article>
 </main>

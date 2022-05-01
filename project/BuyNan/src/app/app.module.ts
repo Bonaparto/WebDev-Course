@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ItemComponent } from './item/item.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
+import { ItemsListComponent } from './items-list/items-list.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { DeleteModalComponent } from './delete-modal/delete-modal.component';
     ItemComponent,
     ItemDetailsComponent,
     DeleteModalComponent,
+    ItemsListComponent,
   ],
   imports: [
     BrowserModule,
