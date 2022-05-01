@@ -155,7 +155,50 @@ export class AppService {
     },
   ];
 
-  providers: Provider[] = [];
+  providers: Provider[] = [
+    {
+      type: 'provider',
+      id: 0,
+      name: 'testProvider',
+      src: '',
+      email: 'blabla@gmail.com'
+    },
+    {
+      type: 'provider',
+      id: 1,
+      name: 'testProvider',
+      src: '',
+      email: 'blabla@gmail.com'
+    },
+    {
+      type: 'provider',
+      id: 2,
+      name: 'testProvider',
+      src: '',
+      email: 'blabla@gmail.com'
+    },
+    {
+      type: 'provider',
+      id: 3,
+      name: 'testProvider',
+      src: '',
+      email: 'blabla@gmail.com'
+    },
+    {
+      type: 'provider',
+      id: 4,
+      name: 'testProvider',
+      src: '',
+      email: 'blabla@gmail.com'
+    },
+    {
+      type: 'provider',
+      id: 5,
+      name: 'testProvider',
+      src: '',
+      email: 'blabla@gmail.com'
+    },
+  ];
   items: Item[] = this.products;
 
   setActiveList(type: string) {
@@ -166,6 +209,7 @@ export class AppService {
       if(type === 'Products') this.items = this.products;
       if(type === 'Categories') this.items = this.categories;
       if(type === 'Providers') this.items = this.providers;
+      // console.groupCollapsed(
     }
     console.log(this.items);
   }

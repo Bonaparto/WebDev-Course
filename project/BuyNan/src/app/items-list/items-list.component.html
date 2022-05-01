@@ -1,4 +1,14 @@
-<ul class="article__items-list">
+<ul [ngClass]="getActiveButton() !== 'Providers' ? 'article__items-list' : 'article__providers-list'">
+  <li 
+    *ngIf="getActiveButton() === 'Providers'"
+    class="article__provider"
+  >
+    <div class="article__provider-info odd_provider">
+      <span class="article__provider-number">#</span>
+      <span class="article__provider-name">Name</span>
+      <span class="article__provider-email">Email </span>
+    </div>
+  </li>
   <app-item 
     *ngFor="let item of items" 
     [item]="item"

@@ -30,3 +30,31 @@
     }
   }
 }
+
+.article__provider {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 20px 16px 20px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  &-info {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include text-style($fw-regular, $fs-m, $lh-m, $textHigh);
+  }
+  &-manage {
+    width: 5%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.odd_provider {
+  background-color: #F9F9F9;
+}
+
+.even_provider {
+  background-color: rgba(73, 159, 104, 0.1);
+}

@@ -1,6 +1,7 @@
 <li 
-  *ngIf="item.type !== 'Providers'"
+  *ngIf="item.type !== 'provider'; else elseBlock"
   class="article__item"
+  [routerLink]="[item.id+1]"
 >
   <img 
     src='../assets/images/{{item.src}}.png'
@@ -24,17 +25,20 @@
   <button class="article__item-button">Watch more</button>
 </li>
 
-<li 
-  #elseBlock
-  class="article__provider" 
->
-  <div class="">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <div>
-    <img src="" alt="">
-    <img src="" alt="">
-  </div>
-</li>
+<ng-template #elseBlock>
+  <li 
+    class="article__provider" 
+    [ngClass]="item.id % 2 === 0 ? 'odd_provider' : 'even_provider'"
+    [routerLink]="[item.id+1]"
+  >
+    <div class="article__provider-info">
+      <span class="article__provider-number">{{ item.id + 1 }}</span>
+      <span class="article__provider-name">{{ item.name }}</span>
+      <span class="article__provider-email">{{ item.email }} </span>
+    </div>
+    <div class="article__provider-manage">
+      <img src="../../assets/images/decorative/delete.svg">
+      <img src="../../assets/images/decorative/icon_right.svg">
+    </div>
+  </li>
+</ng-template>

@@ -27,4 +27,8 @@ export class ItemsListComponent implements OnInit {
   getItems(): void {
     this.items = this.service.getItems();
   }
+
+  getActiveButton(): string {
+    return this.service.getActiveButton();
+  }
 }

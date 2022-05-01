@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
   searchInput: string = '';
 
   onNavClick(buttonName: string) {
+    console.log('button', buttonName);
     this.service.setActiveList(buttonName);
   }
 
