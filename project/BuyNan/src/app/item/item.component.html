@@ -1,4 +1,7 @@
-<li class="article__item">
+<li 
+  *ngIf="item.type !== 'Providers'"
+  class="article__item"
+>
   <img 
     src='../assets/images/{{item.src}}.png'
     class="article__item-photo"
@@ -19,4 +22,19 @@
     Provider: <span class="article__item-provider-name">{{ item.provider }}</span>
   </span>
   <button class="article__item-button">Watch more</button>
+</li>
+
+<li 
+  #elseBlock
+  class="article__provider" 
+>
+  <div class="">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div>
+    <img src="" alt="">
+    <img src="" alt="">
+  </div>
 </li>

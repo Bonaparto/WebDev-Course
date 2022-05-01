@@ -1,0 +1,7 @@
+<ul class="article__items-list">
+  <app-item 
+    *ngFor="let item of items" 
+    [item]="item"
+    (click)="openItemDetails(item)"
+  ></app-item>
+</ul>
