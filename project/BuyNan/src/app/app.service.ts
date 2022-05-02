@@ -10,6 +10,8 @@ export class AppService {
   constructor(private authorizationService: AuthorizationService) { }
 
   activeButton: string = 'Products'
+  modalActive: Boolean = false;
+  modalType: string = '';
 
   products: Product[] = [
     {
@@ -17,7 +19,8 @@ export class AppService {
       id: 0,
       name: 'test',
       price: 1000,
-      provider: 'Bodum',
+      provider: 'testProvider',
+      category: 'testCategory',
       src: 'products/lays'
     },
     {
@@ -25,7 +28,8 @@ export class AppService {
       id: 1,
       name: 'test',
       price: 1000,
-      provider: 'Bodum',
+      provider: 'testProvider',
+      category: 'testCategory',
       src: 'products/lays'
     },
     {
@@ -33,7 +37,8 @@ export class AppService {
       id: 2,
       name: 'test',
       price: 1000,
-      provider: 'Bodum',
+      provider: 'testProvider',
+      category: 'testCategory',
       src: 'products/lays'
     },
     {
@@ -41,7 +46,8 @@ export class AppService {
       id: 3,
       name: 'test',
       price: 1000,
-      provider: 'Bodum',
+      provider: 'testProvider',
+      category: 'testCategory',
       src: 'products/lays'
     },
     {
@@ -49,7 +55,8 @@ export class AppService {
       id: 4,
       name: 'test',
       price: 1000,
-      provider: 'Bodum',
+      provider: 'testProvider',
+      category: 'testCategory',
       src: 'products/lays'
     },
     {
@@ -57,7 +64,8 @@ export class AppService {
       id: 5,
       name: 'test',
       price: 1000,
-      provider: 'Bodum',
+      provider: 'testProvider',
+      category: 'testCategory',
       src: 'products/lays'
     },
     {
@@ -65,7 +73,8 @@ export class AppService {
       id: 5,
       name: 'test',
       price: 1000,
-      provider: 'Bodum',
+      provider: 'testProvider',
+      category: 'testCategory',
       src: 'products/lays'
     },
     {
@@ -73,7 +82,8 @@ export class AppService {
       id: 5,
       name: 'test',
       price: 1000,
-      provider: 'Bodum',
+      provider: 'testProvider',
+      category: 'testCategory',
       src: 'products/lays'
     },
     {
@@ -81,7 +91,8 @@ export class AppService {
       id: 5,
       name: 'test',
       price: 1000,
-      provider: 'Bodum',
+      provider: 'testProvider',
+      category: 'testCategory',
       src: 'products/lays'
     },
   ];
@@ -200,6 +211,25 @@ export class AppService {
     },
   ];
   items: Item[] = this.products;
+  item: Item = {
+    id: null,
+    type: '',
+    name: '',
+    src: ''
+  };
+
+  isModalActive(): Boolean {
+    return this.modalActive;
+  }
+
+  openModal(type: string): void {
+    this.setModalState(true);
+    this.modalType = type;
+  }
+
+  setModalState(state: Boolean): void {
+    this.modalActive = state;
+  }
 
   setActiveList(type: string) {
     this.activeButton = type;
@@ -209,17 +239,31 @@ export class AppService {
       if(type === 'Products') this.items = this.products;
       if(type === 'Categories') this.items = this.categories;
       if(type === 'Providers') this.items = this.providers;
-      // console.groupCollapsed(
     }
-    console.log(this.items);
+  }
+
+  setActiveItem(item: Item) {
+    this.item = item;
   }
 
   getItems(): Item[] {
     return this.items;
   }
 
+  getProducts(): Product[] {
+    return this.products;
+  }
+
+  getItem(): Item {
+    return this.item;
+  }
+
   getActiveButton(): string {
     return this.activeButton;
+  }
+
+  getModalType(): string {
+    return this.modalType;
   }
 
 }

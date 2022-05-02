@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { Item } from '../types';
 
@@ -12,16 +12,10 @@ export class ItemsListComponent implements OnInit {
 
   constructor(private service: AppService) { }
 
-  @Input()
-
   items: Item[] = [];
 
   ngOnInit(): void {
     this.getItems();
-  }
-
-  openItemDetails(item: any) {
-    console.log(item);
   }
 
   getItems(): void {

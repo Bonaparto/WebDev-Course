@@ -1,0 +1,25 @@
+@import '../../styles.scss';
+
+.item {
+  display: flex;
+  &-info {
+    padding: 10px;
+  }
+  &-button {
+    height: fit-content;
+    padding: 10px;
+    background-color: $yellow
+  }
+}
+
+.category {
+  &-name {
+    margin: 0 30px
+  }
+}
+
+.provider {
+  &-firstline {
+    margin: 30px 0px;
+  }
+}

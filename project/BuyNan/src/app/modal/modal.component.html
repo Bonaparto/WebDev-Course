@@ -1,0 +1,7 @@
+<ul>
+  <span>{{ type }} a {{ item.type }}</span>
+  <li *ngFor="let field of fieldsList">
+    {{ field }}
+    <input [ngModel]="item[field]" type="text">
+  </li>
+</ul> 

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from './app.service';
 import { AuthorizationService } from './authorization.service';
-import { Item } from './types/Item';
-// import { ActivatedRoute, relativeTo } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -21,17 +19,24 @@ export class AppComponent implements OnInit {
 
   searchInput: string = '';
 
-  onNavClick(buttonName: string) {
-    console.log('button', buttonName);
+  onNavClick(buttonName: string): void {
     this.service.setActiveList(buttonName);
   }
 
-  isButtonActive(buttonName: string) {
+  isButtonActive(buttonName: string): Boolean {
     return this.service.activeButton === buttonName;
+  }
+
+  isModalActive(): Boolean {
+    return this.service.isModalActive();
   }
 
   getTextForLogin() : string {
     return this.authorizationSevice.isAuthorized() ? 'Logout' : 'Login';
+  }
+
+  openModal(type: string): void {
+    this.service.openModal(type);
   }
 
 }

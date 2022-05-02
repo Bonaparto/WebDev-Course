@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
+import { Item } from '../types';
 
 @Component({
   selector: 'app-item',
@@ -10,9 +12,13 @@ export class ItemComponent implements OnInit {
 
   @Input() item: any;
 
-  constructor() { }
+  constructor(private service: AppService) { }
 
   ngOnInit(): void {
+  }
+
+  openItemDetails(item: Item) {
+    this.service.setActiveItem(item);
   }
 
   isProduct(): Boolean {

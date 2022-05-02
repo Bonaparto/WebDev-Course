@@ -22,7 +22,10 @@
   >
     Provider: <span class="article__item-provider-name">{{ item.provider }}</span>
   </span>
-  <button class="article__item-button">Watch more</button>
+  <button 
+    class="article__item-button"
+    (click)="openItemDetails(item)"
+  >Watch more</button>
 </li>
 
 <ng-template #elseBlock>
@@ -30,6 +33,7 @@
     class="article__provider" 
     [ngClass]="item.id % 2 === 0 ? 'odd_provider' : 'even_provider'"
     [routerLink]="[item.id+1]"
+    (click)="openItemDetails(item)"
   >
     <div class="article__provider-info">
       <span class="article__provider-number">{{ item.id + 1 }}</span>

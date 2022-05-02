@@ -1,0 +1,33 @@
+<div *ngIf="item.type !== 'provider'; else Provider" class="item">
+  <img src="../../assets/images/{{item.src}}.png">
+  <div *ngIf="item.type === 'product'; else Category">
+    <span class="item-info">{{ item.name }}</span>
+    <span class="item-info">{{ item.category }}</span>
+    <span class="item-info">{{ item.provider }}</span>
+    <span class="item-info">{{ item.price }}</span>
+  </div>
+  <ng-template #Category class="category">
+    <span class="category-name">{{ item.name }}</span>
+    <ul>
+      <li *ngFor="let item of itemsList" class="category-item">
+        {{item.id + 1}} {{item.name}}
+      </li>
+    </ul>
+  </ng-template>
+</div>
+
+<ng-template #Provider>
+  <div class="provider">
+    <div class="provider-firstline">
+      <span>Name</span>
+      <span>Email</span>
+    </div>
+    <div>
+      <span>{{ item.name }}</span>
+      <span>{{ item.email }}</span>
+    </div>
+  </div>
+</ng-template>
+
+<button class="item-button">Delete</button>
+<button class="item-button">Edit</button>
