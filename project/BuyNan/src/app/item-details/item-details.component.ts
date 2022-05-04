@@ -26,4 +26,8 @@ export class ItemDetailsComponent implements OnInit {
     const res = list.filter(item => item.category === category);
     return res;
   }
+
+  openModal(type: string) {
+    this.service.openModal(type);
+  }
 }

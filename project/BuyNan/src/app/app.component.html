@@ -64,9 +64,12 @@
           </button>
         </div>
         <div class="article__create">
-          <button class="article__create-button">
+          <button 
+            (click)="openModal('Create')" 
+            class="article__create-button"
+          >
             <img src="../assets/images/decorative/icon_add.svg">
-            <span (click)="openModal('Create')" class="article__create-text">Create</span>
+            <span class="article__create-text">Create</span>
           </button>
         </div>
       </section>

@@ -1,0 +1,27 @@
+@import '../../styles.scss';
+
+.modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(18, 35, 26, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__info {
+    position: relative;
+    padding: 50px;
+    background-color: $yellow;
+    width: fit-content;
+    height: fit-content;
+  }
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}

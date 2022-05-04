@@ -1,7 +1,14 @@
-<ul>
-  <span>{{ type }} a {{ item.type }}</span>
-  <li *ngFor="let field of fieldsList">
-    {{ field }}
-    <input [ngModel]="item[field]" type="text">
-  </li>
-</ul> 
+<div class="modal">
+  <div class="modal__info">
+    <img 
+      src="../../assets/images/decorative/close.svg" 
+      class="modal__close"
+      (click)="closeModal()"
+    >
+    <span class="modal__field-name">{{ type }} a {{ item.type }}</span>
+    <div *ngFor="let field of fieldsList" class="modal__field">
+      {{ field }}
+      <input [ngModel]="item[field]" type="text">
+    </div>
+  </div>
+</div> 

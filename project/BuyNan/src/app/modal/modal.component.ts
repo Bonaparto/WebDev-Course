@@ -12,14 +12,46 @@ export class ModalComponent implements OnInit {
 
   constructor(private service: AppService) { }
 
-  item: any;
-  fieldsList: any[];
+  item: any = {};
+  fieldsList: any[] = [
+    'id',
+    'type',
+    'name',
+    'src',
+  ];
   type: string;
 
   ngOnInit(): void {
-    this.item = this.service.getItems()[0];
-    this.fieldsList = Object.keys(this.item);
     this.type = this.service.getModalType();
+    if (this.type === 'Edit') {
+      this.item = this.service.getItems()[0];
+      this.fieldsList = Object.keys(this.item);
+    } else {
+      const itemType = this.service.getActiveButton();
+      console.log(itemType);
+      this.item['type'] = 'category';
+      if (itemType === 'Products') {
+        this.fieldsList = this.fieldsList.concat([
+          'price',
+          'provider',
+          'category'
+        ]);  
+        this.item['type'] = 'product';
+      } else if (itemType === 'Providers') {
+        this.fieldsList.push('email'); 
+        this.item['type'] = 'provider';
+      }
+      console.log(this.fieldsList);
+      this.fieldsList.forEach(field => {
+        if (field !== 'type')
+        this.item[field] = null;
+      });
+    } 
+    console.log(this.item, this.fieldsList);
+  }
+
+  closeModal() {
+    this.service.setModalState(false);
   }
 
 }
