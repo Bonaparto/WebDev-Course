@@ -10,21 +10,18 @@ export class AuthorizationService {
 
   authorized: Boolean = false;
 
-  login(): void {
+  login(item: any): void {
     console.log('login');
-    this.authorized = false;
+    this.authorized = true;
   }
 
   logout(): void {
     console.log('logout');
-    this.authorized = true;
+    this.authorized = false;
   }
 
   isAuthorized(): Boolean {
+    console.log(this.authorized);
     return this.authorized;
-  }
-
-  authorization(): void {
-    this.isAuthorized ? this.logout() : this.login();
   }
 }

@@ -5,11 +5,21 @@
       class="modal__close"
       (click)="closeModal()"
     >
-    <span class="modal__field-name">{{ type }} a {{ item.type }}</span>
-    <div *ngFor="let field of fieldsList" class="modal__field">
-      {{ field }}
-      <input [ngModel]="item[field]" type="text">
+    <div *ngIf="item.type !== 'auth'; else Login">
+      <span class="modal__field-name">{{ type }} a {{ item.type }}</span>
+      <div *ngFor="let field of fieldsList" class="modal__field">
+        {{ field }}
+        <input [ngModel]="item[field]" type="text">
+      </div>
     </div>
-    <button class="modal__button" (click)="onSubmit()">Submit</button>
+    <ng-template #Login>
+      <div>
+        Login
+        <input type="text" name="" id="">
+        Password
+        <input type="text" name="" id="">
+      </div>
+      <button class="modal__button" (click)="onSubmit()">Submit</button>
+    </ng-template>
   </div>
 </div> 

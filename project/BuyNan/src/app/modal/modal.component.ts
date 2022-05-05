@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../services/app.service';
 import { RequestsService } from '../services/requests.service';
+import { AuthorizationService } from '../services/authorization.service';
 
 @Component({
   selector: 'app-modal',
@@ -9,7 +10,7 @@ import { RequestsService } from '../services/requests.service';
 })
 export class ModalComponent implements OnInit {
 
-  constructor(private service: AppService, private requestsService: RequestsService) { }
+  constructor(private service: AppService, private requestsService: RequestsService, private authService: AuthorizationService) { }
 
   item: any = {};
   fieldsList: any[] = [
@@ -25,6 +26,13 @@ export class ModalComponent implements OnInit {
     if (this.type === 'Edit') {
       this.item = this.service.getItems()[0];
       this.fieldsList = Object.keys(this.item);
+    } else if (this.type === 'auth') {
+      this.type = 'auth';
+      this.item = {
+        type: this.type,
+        login: '',
+        password: ''
+      };
     } else {
       const itemType = this.service.getActiveButton();
       console.log(itemType);
@@ -56,9 +64,12 @@ export class ModalComponent implements OnInit {
   onSubmit() {
     if (this.type === 'Create') {
       this.requestsService.post(this.item, this.item.type);
+    } else if (this.type === 'auth') {
+      this.authService.login(this.item);
     } else {
       this.requestsService.put(this.item, this.item.type);
     }
+    this.closeModal();
     console.log('wtf');
     // if (this.type === 'Edit') {
     //   this.service.

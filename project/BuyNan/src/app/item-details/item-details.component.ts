@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../services/app.service';
+import { RequestsService } from '../services/requests.service';
 import { Product } from '../types';
 
 @Component({
@@ -9,7 +10,7 @@ import { Product } from '../types';
 })
 export class ItemDetailsComponent implements OnInit {
 
-  constructor(private service: AppService) { }
+  constructor(private service: AppService, private requestsService: RequestsService) { }
   
   item: any;
   itemsList: Product[];
@@ -29,5 +30,9 @@ export class ItemDetailsComponent implements OnInit {
 
   openModal(type: string) {
     this.service.openModal(type);
+  }
+
+  deleteItem() {
+    this.requestsService.delete(this.item.type, this.item.id);
   }
 }

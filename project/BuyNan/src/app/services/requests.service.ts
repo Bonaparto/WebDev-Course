@@ -27,4 +27,9 @@ export class RequestsService {
   put(item: any, itemType: string): void {
     console.log('put', item, itemType);
   }
+
+  delete(itemType: string, itemId: number): void {
+    console.log('delete', itemType, itemId);
+    this.appservice.goBack();
+  }
 }

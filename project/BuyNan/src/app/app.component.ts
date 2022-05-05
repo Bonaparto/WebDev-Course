@@ -20,7 +20,15 @@ export class AppComponent implements OnInit {
   searchInput: string = '';
 
   onNavClick(buttonName: string): void {
-    this.service.setActiveList(buttonName);
+    if (buttonName === 'Authorization') {
+      if (this.authorizationSevice.isAuthorized()) {
+        this.authorizationSevice.logout()
+      } else {
+        this.service.openModal('auth');
+      }
+    } else {
+      this.service.setActiveList(buttonName);
+    }
   }
 
   isButtonActive(buttonName: string): Boolean {

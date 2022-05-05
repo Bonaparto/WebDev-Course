@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AuthorizationService } from './authorization.service';
 import { Item, Product, Provider } from '../types/index' ;
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
 
-  constructor(private authorizationService: AuthorizationService) { }
+  constructor(private authorizationService: AuthorizationService, private _location: Location) { }
 
   activeButton: string = 'Products'
   modalActive: Boolean = false;
@@ -233,13 +234,9 @@ export class AppService {
 
   setActiveList(type: string) {
     this.activeButton = type;
-    if(type === 'Authorization') {
-      this.authorizationService.authorization();
-    } else {
-      if(type === 'Products') this.items = this.products;
-      if(type === 'Categories') this.items = this.categories;
-      if(type === 'Providers') this.items = this.providers;
-    }
+    if(type === 'Products') this.items = this.products;
+    if(type === 'Categories') this.items = this.categories;
+    if(type === 'Providers') this.items = this.providers;
   }
 
   setActiveItem(item: Item) {
@@ -264,6 +261,10 @@ export class AppService {
 
   getModalType(): string {
     return this.modalType;
+  }
+
+  goBack() {
+    this._location.back();
   }
 
 }
