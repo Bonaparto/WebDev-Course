@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AuthorizationService } from './authorization.service';
-import { Item, Product, Provider } from './types/index' ;
+import { Item, Product, Provider } from '../types/index' ;
 
 @Injectable({
   providedIn: 'root'

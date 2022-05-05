@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AnyForUntypedForms } from '@angular/forms';
-import { AppService } from '../app.service';
-import { Item } from '../types';
+import { AppService } from '../services/app.service';
+import { RequestsService } from '../services/requests.service';
 
 @Component({
   selector: 'app-modal',
@@ -10,7 +9,7 @@ import { Item } from '../types';
 })
 export class ModalComponent implements OnInit {
 
-  constructor(private service: AppService) { }
+  constructor(private service: AppService, private requestsService: RequestsService) { }
 
   item: any = {};
   fieldsList: any[] = [
@@ -52,6 +51,18 @@ export class ModalComponent implements OnInit {
 
   closeModal() {
     this.service.setModalState(false);
+  }
+
+  onSubmit() {
+    if (this.type === 'Create') {
+      this.requestsService.post(this.item, this.item.type);
+    } else {
+      this.requestsService.put(this.item, this.item.type);
+    }
+    console.log('wtf');
+    // if (this.type === 'Edit') {
+    //   this.service.
+    // }
   }
 
 }

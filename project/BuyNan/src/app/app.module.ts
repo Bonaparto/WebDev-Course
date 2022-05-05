@@ -8,6 +8,7 @@ import { ItemComponent } from './item/item.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { ItemsListComponent } from './items-list/items-list.component';
 import { ModalComponent } from './modal/modal.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -21,9 +22,14 @@ import { ModalComponent } from './modal/modal.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  // providers: [
+  //   {
+  //     provide: HTTP_INTERCEPTORS,
+  //   }
+  // ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
