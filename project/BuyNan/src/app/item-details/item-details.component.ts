@@ -13,19 +13,16 @@ export class ItemDetailsComponent implements OnInit {
   constructor(private service: AppService, private requestsService: RequestsService) { }
   
   item: any;
-  itemsList: Product[];
+  itemsList;
 
   ngOnInit(): void {
     this.item = this.service.getItem();
     if(this.item.type === 'category') {
-      this.itemsList = this.getItemsByCategory(this.item.name);
+      console.log(this.itemsList);
+      this.requestsService.getItemsByCategory(this.item.id).subscribe(data => {
+        this.itemsList = data
+      });
     }
-  }
-
-  getItemsByCategory(category: string): Product[] {
-    const list: Product[] = this.service.getProducts();
-    const res = list.filter(item => item.category === category);
-    return res;
   }
 
   openModal(type: string) {
@@ -33,6 +30,9 @@ export class ItemDetailsComponent implements OnInit {
   }
 
   deleteItem() {
-    this.requestsService.delete(this.item.type, this.item.id);
+    this.requestsService.delete(this.item).subscribe(res => {
+      console.log(res);
+    });
+    this.service.deleteItem(this.item.id);
   }
 }

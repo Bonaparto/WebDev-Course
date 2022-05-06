@@ -25,7 +25,6 @@ export class AppComponent implements OnInit {
   login() {
     this.CompanyServiceService.login(this.username, this.password)
       .subscribe(res => {
-        console.log(this.username, this.password);
         localStorage.setItem('token', res.token); 
 
         this.logged = true;

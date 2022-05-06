@@ -37,7 +37,6 @@ export class CompanyComponent implements OnInit {
   }
 
   postCompany() {
-    console.log(this.company);
     this.companyService.postCompany(this.company).subscribe( (data) => {
       console.log(data);
     })

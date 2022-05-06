@@ -9,17 +9,17 @@
       <span class="modal__field-name">{{ type }} a {{ item.type }}</span>
       <div *ngFor="let field of fieldsList" class="modal__field">
         {{ field }}
-        <input [ngModel]="item[field]" type="text">
+        <input [(ngModel)]="item[field]" type="text">
       </div>
     </div>
     <ng-template #Login>
       <div>
         Login
-        <input type="text" name="" id="">
+        <input type="text" [(ngModel)]="item.username">
         Password
-        <input type="text" name="" id="">
+        <input type="text" [(ngModel)]="item.password">
       </div>
-      <button class="modal__button" (click)="onSubmit()">Submit</button>
     </ng-template>
+    <button class="modal__button" (click)="onSubmit()">Submit</button>
   </div>
 </div> 

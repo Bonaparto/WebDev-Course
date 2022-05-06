@@ -9,6 +9,7 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 import { ItemsListComponent } from './items-list/items-list.component';
 import { ModalComponent } from './modal/modal.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
+import { AuthInterceptor } from './auth.interceptor';
 
 
 @NgModule({
@@ -25,11 +26,13 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
     FormsModule,
     HttpClientModule
   ],
-  // providers: [
-  //   {
-  //     provide: HTTP_INTERCEPTORS,
-  //   }
-  // ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

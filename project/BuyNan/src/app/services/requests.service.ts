@@ -12,24 +12,56 @@ export class RequestsService {
 
   constructor(private http: HttpClient, private appservice: AppService) { }
 
-  post(item: any, itemType: string): void {
-    let body = {};
-    console.log('post', itemType, item);
-    // if (productType === 'Products') {
-    //   body = {
+  get(type: string) {
+    return this.http.get(`${this.BASE_URL}/${type}`);
+  }
 
-    //   }
-    // }
-
-    // return this.http.post(`wtf`, body);
+  post(item: any) {
+    let itemType = item.type;
+    if (itemType === 'product') {
+      itemType = 'products';
+    } else if (itemType === 'category') {
+      itemType = 'categories';
+    } else {
+      itemType = 'providers';
+    }
+    return this.http.post(`${this.BASE_URL}/${itemType}`, item);
   };
 
-  put(item: any, itemType: string): void {
-    console.log('put', item, itemType);
+  put(item: any) {
+    let itemType = item.type;
+    if (itemType === 'product') {
+      itemType = 'products';
+    } else if (itemType === 'category') {
+      itemType = 'categories';
+    } else {
+      itemType = 'providers';
+    }
+    return this.http.put(`${this.BASE_URL}/${itemType}/${item.id}`, item);
   }
 
-  delete(itemType: string, itemId: number): void {
-    console.log('delete', itemType, itemId);
+  delete(item: any) {
+    let itemType = item.type;
+    if (itemType === 'product') {
+      itemType = 'products';
+    } else if (itemType === 'category') {
+      itemType = 'categories';
+    } else {
+      itemType = 'providers';
+    }
     this.appservice.goBack();
+    return this.http.delete(`${this.BASE_URL}/${itemType}/${item.id}`, item.id);
   }
+
+  getItemsByCategory(category_id) {
+    return this.http.get(`${this.BASE_URL}/categories/${category_id}/products`);
+  }
+
+  login(username: string, password: string): Observable<any> {
+    return this.http.post(`${this.BASE_URL}/login`, {
+      username,
+      password
+    })
+  }
+
 }

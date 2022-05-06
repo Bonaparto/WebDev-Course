@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from './services/app.service';
 import { AuthorizationService } from './services/authorization.service';
+import { RequestsService } from './services/requests.service';
 
 @Component({
   selector: 'app-root',
@@ -9,20 +10,21 @@ import { AuthorizationService } from './services/authorization.service';
 })
 export class AppComponent implements OnInit {
 
-  ngOnInit() {}
-  
   constructor(
     private service: AppService, 
-    private authorizationSevice: AuthorizationService) {}
-    
+    private authorizationService: AuthorizationService,
+    private requestsService: RequestsService) {}
+
+  ngOnInit() {}
   title: string = 'BuyNan';
 
   searchInput: string = '';
+  loading: Boolean = false;
 
   onNavClick(buttonName: string): void {
     if (buttonName === 'Authorization') {
-      if (this.authorizationSevice.isAuthorized()) {
-        this.authorizationSevice.logout()
+      if (this.authorizationService.isAuthorized()) {
+        this.authorizationService.logout()
       } else {
         this.service.openModal('auth');
       }
@@ -40,7 +42,7 @@ export class AppComponent implements OnInit {
   }
 
   getTextForLogin() : string {
-    return this.authorizationSevice.isAuthorized() ? 'Logout' : 'Login';
+    return this.authorizationService.isAuthorized() ? 'Logout' : 'Login';
   }
 
   openModal(type: string): void {

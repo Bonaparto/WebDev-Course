@@ -24,18 +24,17 @@ export class ModalComponent implements OnInit {
   ngOnInit(): void {
     this.type = this.service.getModalType();
     if (this.type === 'Edit') {
-      this.item = this.service.getItems()[0];
+      this.item = this.service.getItem();
       this.fieldsList = Object.keys(this.item);
     } else if (this.type === 'auth') {
       this.type = 'auth';
       this.item = {
         type: this.type,
-        login: '',
+        username: '',
         password: ''
       };
     } else {
       const itemType = this.service.getActiveButton();
-      console.log(itemType);
       this.item['type'] = 'category';
       if (itemType === 'Products') {
         this.fieldsList = this.fieldsList.concat([
@@ -48,13 +47,11 @@ export class ModalComponent implements OnInit {
         this.fieldsList.push('email'); 
         this.item['type'] = 'provider';
       }
-      console.log(this.fieldsList);
       this.fieldsList.forEach(field => {
         if (field !== 'type')
         this.item[field] = null;
       });
     } 
-    console.log(this.item, this.fieldsList);
   }
 
   closeModal() {
@@ -63,17 +60,18 @@ export class ModalComponent implements OnInit {
 
   onSubmit() {
     if (this.type === 'Create') {
-      this.requestsService.post(this.item, this.item.type);
+      this.requestsService.post(this.item).subscribe(res => {
+        this.service.addItem(res);
+      }); 
+      console.log('items1', this.service.getItems());
     } else if (this.type === 'auth') {
       this.authService.login(this.item);
     } else {
-      this.requestsService.put(this.item, this.item.type);
+      this.requestsService.put(this.item).subscribe(res => {
+        this.item = res;
+      }); 
     }
     this.closeModal();
-    console.log('wtf');
-    // if (this.type === 'Edit') {
-    //   this.service.
-    // }
   }
 
 }

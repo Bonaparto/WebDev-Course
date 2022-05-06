@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AuthorizationService } from './authorization.service';
 import { Item, Product, Provider } from '../types/index' ;
 import { Location } from '@angular/common';
 
@@ -8,216 +7,26 @@ import { Location } from '@angular/common';
 })
 export class AppService {
 
-  constructor(private authorizationService: AuthorizationService, private _location: Location) { }
+  constructor(private _location: Location) { }
 
   activeButton: string = 'Products'
   modalActive: Boolean = false;
   modalType: string = '';
 
-  products: Product[] = [
-    {
-      type: 'product',
-      id: 0,
-      name: 'test',
-      price: 1000,
-      provider: 'testProvider',
-      category: 'testCategory',
-      src: 'products/lays'
-    },
-    {
-      type: 'product',
-      id: 1,
-      name: 'test',
-      price: 1000,
-      provider: 'testProvider',
-      category: 'testCategory',
-      src: 'products/lays'
-    },
-    {
-      type: 'product',
-      id: 2,
-      name: 'test',
-      price: 1000,
-      provider: 'testProvider',
-      category: 'testCategory',
-      src: 'products/lays'
-    },
-    {
-      type: 'product',
-      id: 3,
-      name: 'test',
-      price: 1000,
-      provider: 'testProvider',
-      category: 'testCategory',
-      src: 'products/lays'
-    },
-    {
-      type: 'product',
-      id: 4,
-      name: 'test',
-      price: 1000,
-      provider: 'testProvider',
-      category: 'testCategory',
-      src: 'products/lays'
-    },
-    {
-      type: 'product',
-      id: 5,
-      name: 'test',
-      price: 1000,
-      provider: 'testProvider',
-      category: 'testCategory',
-      src: 'products/lays'
-    },
-    {
-      type: 'product',
-      id: 5,
-      name: 'test',
-      price: 1000,
-      provider: 'testProvider',
-      category: 'testCategory',
-      src: 'products/lays'
-    },
-    {
-      type: 'product',
-      id: 5,
-      name: 'test',
-      price: 1000,
-      provider: 'testProvider',
-      category: 'testCategory',
-      src: 'products/lays'
-    },
-    {
-      type: 'product',
-      id: 5,
-      name: 'test',
-      price: 1000,
-      provider: 'testProvider',
-      category: 'testCategory',
-      src: 'products/lays'
-    },
-  ];
+  products: Product[] = [];
 
-  categories: Item[] = [
-    {
-      type: 'category',
-      id: 0,
-      name: 'testCategory',
-      src: 'categories/vegetables'
-    },
-    {
-      type: 'category',
-      id: 1,
-      name: 'testCategory',
-      src: 'categories/vegetables'
-    },
-    {
-      type: 'category',
-      id: 2,
-      name: 'testCategory',
-      src: 'categories/vegetables'
-    },
-    {
-      type: 'category',
-      id: 3,
-      name: 'testCategory',
-      src: 'categories/vegetables'
-    },
-    {
-      type: 'category',
-      id: 4,
-      name: 'testCategory',
-      src: 'categories/vegetables'
-    },
-    {
-      type: 'category',
-      id: 5,
-      name: 'testCategory',
-      src: 'categories/vegetables'
-    },
-    {
-      type: 'category',
-      id: 6,
-      name: 'testCategory',
-      src: 'categories/vegetables'
-    },
-    {
-      type: 'category',
-      id: 7,
-      name: 'testCategory',
-      src: 'categories/vegetables'
-    },
-    {
-      type: 'category',
-      id: 8,
-      name: 'testCategory',
-      src: 'categories/vegetables'
-    },
-    {
-      type: 'category',
-      id: 9,
-      name: 'testCategory',
-      src: 'categories/vegetables'
-    },
-    {
-      type: 'category',
-      id: 10,
-      name: 'testCategory',
-      src: 'categories/vegetables'
-    },
-  ];
+  categories: Item[] = [];
 
-  providers: Provider[] = [
-    {
-      type: 'provider',
-      id: 0,
-      name: 'testProvider',
-      src: '',
-      email: 'blabla@gmail.com'
-    },
-    {
-      type: 'provider',
-      id: 1,
-      name: 'testProvider',
-      src: '',
-      email: 'blabla@gmail.com'
-    },
-    {
-      type: 'provider',
-      id: 2,
-      name: 'testProvider',
-      src: '',
-      email: 'blabla@gmail.com'
-    },
-    {
-      type: 'provider',
-      id: 3,
-      name: 'testProvider',
-      src: '',
-      email: 'blabla@gmail.com'
-    },
-    {
-      type: 'provider',
-      id: 4,
-      name: 'testProvider',
-      src: '',
-      email: 'blabla@gmail.com'
-    },
-    {
-      type: 'provider',
-      id: 5,
-      name: 'testProvider',
-      src: '',
-      email: 'blabla@gmail.com'
-    },
-  ];
-  items: Item[] = this.products;
+  providers: Provider[] = [];
+  items: any[] = this.products;
   item: Item = {
     id: null,
     type: '',
     name: '',
     src: ''
   };
+
+  loading: Boolean = false;
 
   isModalActive(): Boolean {
     return this.modalActive;
@@ -234,13 +43,18 @@ export class AppService {
 
   setActiveList(type: string) {
     this.activeButton = type;
-    if(type === 'Products') this.items = this.products;
-    if(type === 'Categories') this.items = this.categories;
-    if(type === 'Providers') this.items = this.providers;
   }
 
   setActiveItem(item: Item) {
     this.item = item;
+  }
+
+  setItems(arr) {
+    this.items = arr;
+  }
+
+  setProducts(arr) {
+    this.products = arr;
   }
 
   getItems(): Item[] {
@@ -263,8 +77,25 @@ export class AppService {
     return this.modalType;
   }
 
+  deleteItem(id) {
+    this.items = this.items.filter(it => it.id !== id);
+  }
+
+  addItem(item) {
+    this.items.push(item);
+    console.log(this.items);
+  }
+
   goBack() {
     this._location.back();
+  }
+
+  setLoading(state: Boolean) {
+    this.loading = state;
+  }
+
+  isLoaded() {
+    return this.loading;
   }
 
 }

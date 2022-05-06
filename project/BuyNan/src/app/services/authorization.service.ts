@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { RequestsService } from './requests.service';
 
 @Injectable({
   providedIn: 'root'
@@ -6,22 +7,24 @@ import { Injectable } from '@angular/core';
 
 export class AuthorizationService {
 
-  constructor() { }
+  constructor(private requestsService: RequestsService) { }
 
   authorized: Boolean = false;
+  BASE_URL = 'http://127.0.0.1:8000';
 
   login(item: any): void {
-    console.log('login');
-    this.authorized = true;
+    this.requestsService.login(item.username, item.password).subscribe(res => {
+      localStorage.setItem('token', res.token);
+      this.authorized = true;
+    }) 
   }
 
   logout(): void {
-    console.log('logout');
+    localStorage.clear();
     this.authorized = false;
   }
 
   isAuthorized(): Boolean {
-    console.log(this.authorized);
     return this.authorized;
   }
 }
