@@ -23,5 +23,9 @@ urlpatterns = [
     path('categories', CategoriesList.as_view()),
     path('categories/<int:category_id>', category),
     path('categories/<int:category_id>/products/', get_category_products),
-
+    path('providers', ProviderList.as_view()),
+    path('providers/<int:provider_id>', provider),
+    path('products', ProductList.as_view()),
+    path('products/<int:product_id>', product),
+    path('login', obtain_jwt_token)
 ]

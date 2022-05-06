@@ -32,5 +32,5 @@ class ProviderSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Provider
+        model = Product
         fields = ['id', 'name', 'type', 'price', 'src', 'category', 'provider']

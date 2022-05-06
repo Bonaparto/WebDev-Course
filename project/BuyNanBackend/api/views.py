@@ -46,6 +46,66 @@ def category(request, category_id):
         return JsonResponse({'deleted': True})
 
 
+class ProviderList(generics.ListCreateAPIView):
+    queryset = Provider.objects.all()
+    serializer_class = ProviderSerializer
+    permission_classes = (IsAuthenticated, )
+
+
+@csrf_exempt
+def provider(request, provider_id):
+    try:
+        provider = Provider.objects.get(id=provider_id)
+    except Provider.DoesNotExist as e:
+        return JsonResponse({'message': str(e)}, status=400)
+
+    if request.method == 'GET':
+        return JsonResponse(ProviderSerializer(provider).data, safe=False)
+
+    elif request.method == 'PUT':
+        request_body = json.loads(request.body)
+        serializer = ProviderSerializer(instance=provider, data=request_body)
+
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data)
+        return JsonResponse({'error': serializer.errors})
+
+    elif request.method == 'DELETE':
+        provider.delete()
+        return JsonResponse({'deleted': True})
+
+
+class ProductList(generics.ListCreateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    permission_classes = (IsAuthenticated, )
+
+
+@csrf_exempt
+def product(request, product_id):
+    try:
+        product = Product.objects.get(id=product_id)
+    except Product.DoesNotExist as e:
+        return JsonResponse({'message': str(e)}, status=400)
+
+    if request.method == 'GET':
+        return JsonResponse(ProductSerializer(product).data, safe=False)
+
+    elif request.method == 'PUT':
+        request_body = json.loads(request.body)
+        serializer = ProductSerializer(instance=product, data=request_body)
+
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data)
+        return JsonResponse({'error': serializer.errors})
+
+    elif request.method == 'DELETE':
+        product.delete()
+        return JsonResponse({'deleted': True})
+
+
 def get_category_products(request, category_id):
     try:
         products_list = Product.objects.filter(category_id=category_id)
